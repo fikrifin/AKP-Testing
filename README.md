@@ -3,10 +3,10 @@
 jangan lupa instal dan gunakan virtual environment python ya
 
 <h3>Detail Aplikasi</h3>
-Bahasa Pemrograman   : Python
-Framework            : Django
-Database Enggine     : Postgresql
-Javascrips Framework : Vue Js
+<ul>Bahasa Pemrograman   : Python</ul>
+<ul>Framework            : Django</ul>
+<ul>Database Enggine     : Postgresql</ul>
+<ul>Javascrips Framework : Vue Js</ul>
 
 <h3>Tutorial Penggunaan</h3>
 <ul>1. Install Django serta Requirement.txt yang berisikan libarary python agar aplikasi dapat berjalan (python -m pip install -r requirements.txt).</ul>
