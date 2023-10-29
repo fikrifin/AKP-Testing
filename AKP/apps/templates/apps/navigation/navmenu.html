@@ -3,11 +3,11 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
             <li class="nav-item has-sub open"><a href="{% url 'index' %}"><i class="icon-home"></i><span class="menu-title" data-i18n="nav.dash.main">Dashboard</span></a>
                 <ul class="menu-content" style="">
-                    <li class="is-shown"><a class="menu-item" href="#" data-i18n="nav.dash.analytics">Add Deparment</a>
+                    <li class="is-shown"><a class="menu-item" href="{% url 'division_add' %}" data-i18n="nav.dash.analytics">Add Deparment</a>
                     </li>
                     <li class="is-shown"><a class="menu-item" href="{% url 'position_add' %}" data-i18n="nav.dash.project">Add Posisition</a>
                     </li>
-                    <li class="is-shown"><a class="menu-item" href="{% url 'division_add' %}" data-i18n="nav.dash.ecommerce">Add Employee</a>
+                    <li class="is-shown"><a class="menu-item" href="{% url 'employee_add' %}" data-i18n="nav.dash.ecommerce">Add Employee</a>
                     </li>
                 </ul>
             </li>
