@@ -1,5 +1,7 @@
 # AKP-Testing
 
+jangan lupa instal dan gunakan virtual environment python ya
+
 <h3>Detail Aplikasi</h3>
 Bahasa Pemrograman   : Python
 Framework            : Django
