@@ -22,9 +22,9 @@ Javascrips Framework : Vue Js
 <ul>7.  Buka http://127.0.0.1:8000/employee/list/ untuk masuk ke dashboard</ul>
 
 <h3>Fitur</h3>
-<ul>1. Menambah Data Divisi</ul>
-<ul>2. Menambah Data Posisi</ul>
-<ul>3. Menambah Data Karyawan</ul>
+<ul>1. CRUD Data Divisi</ul>
+<ul>2. CRUD Data Posisi</ul>
+<ul>3. CRUD Data Karyawan</ul>
 
 <h3>Kekurangan</h3>
 <ul>- Pada aplikasi ini, saya tidak menambahkan field is_active karena model Employee yang saya gunakan tidak menarik data dari User Model Django.</ul>
