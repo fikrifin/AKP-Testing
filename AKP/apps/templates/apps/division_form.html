@@ -1,0 +1,22 @@
+{% extends "apps/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h1>Buat Data Divisi Baru</h1>
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="card border-success mb-3">
+                    <div class="card-header">
+                        Isi Informasi Divisi
+                    </div>
+                    <div class="card-body">
+                        <form action=" " method="POST" autocomplete="off">
+                            {% csrf_token %}
+                            {{ form2.divisionName|as_crispy_field }}
+                            <button type="submit" class="btn btn-green">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock content %}

@@ -1,0 +1,172 @@
+{% extends "apps/base.html" %}
+
+{% block content %}
+<div class="col-md-12">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title " style="position: relative;"><strong>DAFTAR EMPLOYEE</strong></h4>
+        <p class="card-category"> LEARN, FIX, MAINTAIN, UPGRADE</p>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive" id="myTable">
+          <table class="table">
+            <thead class=" text-primary">
+              <tr>
+              <th>
+                No
+              </th>
+              <th>
+                Name
+              </th>
+              <th>
+                Division
+              </th>
+              <th>
+                Position
+              </th>
+              <th>
+                Age
+              </th>
+              <th>
+                Phone Number
+              </th>
+              <th>
+                Working (Month)
+              </th>
+              <th>
+                Action
+              </th>
+            </tr></thead>
+            <tbody>
+            {% for employee in employee_list %}
+              <tr>
+                <td>
+                  {{ forloop.counter }}
+                </td>
+                <td>
+                  {{ employee.name }}
+                </td>
+                <td>
+                  {{ employee.position.devision }}
+                </td>
+                <td>
+                  {{ employee.position }}
+                </td>
+                <td>
+                  {{ employee.age }}
+                </td>
+                <td>
+                  {{ employee.phone_number }}
+                </td>
+                <td>
+                  {{ employee.workper }}
+                </td>
+                <td>
+                  <a href="{% url 'employee_update' employee.employeesId %}" class="btn btn-outline-primary btn-sm">EDIT</a>
+                  <form action="{% url 'employee_delete' employee.employeesId %}" method="POST" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-danger btn-sm">
+                        HAPUS
+                    </button>
+                  </form>
+                </td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+          <a href="{% url 'employee_add' %}" style="color: white;"><button class="btn btn-primary btn-block">Buat Data Baru<div class="ripple-container"></div></button></a>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+        <div class="card-header card-header-primary">
+          <h4 class="card-title " style="position: relative;"><strong>DAFTAR POSISI</strong></h4>
+          <p class="card-category"> LEARN, FIX, MAINTAIN, UPGRADE</p>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <tr>
+                <th>
+                  Division Name
+                 </th>
+                <th>
+                  Position Name
+                </th>
+                <th>
+                    Action
+                </th>
+              </tr></thead>
+              <tbody>
+              {% for position in position_list %}
+                <tr>
+                  <td>
+                    {{ position.devision }}
+                  </td>
+                  <td>
+                    {{ position.posisitionName }}
+                  </td>
+                  <td>
+                    <a href="{% url 'position_update' position.positionId %}" class="btn btn-outline-primary btn-sm">
+                      EDIT
+                    </a>
+                    <form action="{% url 'position_delete' position.positionId %}" method="POST" class="d-inline">
+                      {% csrf_token %}
+                      <button type="submit" class="btn btn-outline-danger btn-sm">
+                          HAPUS
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+            <a href="{% url 'position_add' %}" style="color: white;"><button class="btn btn-primary btn-block">Buat Data Baru<div class="ripple-container"></div></button></a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header card-header-primary">
+          <h4 class="card-title " style="position: relative;"><strong>DAFTAR DIVISI</strong></h4>
+          <p class="card-category"> LEARN, FIX, MAINTAIN, UPGRADE</p>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <tr>
+                <th>
+                  Division Name
+                </th>
+                <th>
+                    Action
+                </th>
+              </tr></thead>
+              <tbody>
+              {% for division in division_list %}
+                <tr>
+                  <td>
+                    {{ division.divisionName }}
+                  </td>
+                  <td>
+                    <a href="{% url 'division_update' division.divisionId %}" class="btn btn-outline-primary btn-sm">
+                      EDIT
+                    </a>
+                    <form action="{% url 'division_delete' division.divisionId %}" method="POST" class="d-inline">
+                      {% csrf_token %}
+                      <button type="submit" class="btn btn-outline-danger btn-sm">
+                          HAPUS
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+            <a href="{% url 'division_add' %}" style="color: white;"><button class="btn btn-primary btn-block">Buat Data Baru<div class="ripple-container"></div></button></a>
+          </div>
+        </div>
+      </div>
+  </div>
+{% endblock content %}

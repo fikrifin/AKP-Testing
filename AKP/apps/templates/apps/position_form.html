@@ -1,0 +1,23 @@
+{% extends "apps/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h1>Buat Data Posisi Baru</h1>
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="card border-success mb-3">
+                    <div class="card-header">
+                        Isi Informasi Posisi
+                    </div>
+                    <div class="card-body">
+                        <form action=" " method="POST" autocomplete="off">
+                            {% csrf_token %}
+                            {{ form1.posisitionName|as_crispy_field }}
+                            {{ form1.devision|as_crispy_field }}
+                            <button type="submit" class="btn btn-green">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock content %}
