@@ -49,5 +49,5 @@ class Employees(models.Model):
         months = delta.years * 12 + delta.months
         years = delta.years
 
-        result = f"{months} Bulan {years} Tahun"
+        result = f"{years} tahun {months % 12} bulan"
         return result
