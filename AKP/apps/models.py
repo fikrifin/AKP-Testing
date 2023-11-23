@@ -1,6 +1,7 @@
 from django.db import models
 import datetime
 from datetime import datetime, date, timedelta
+from dateutil.relativedelta import relativedelta
 
 # Create your models here.
 
@@ -41,4 +42,12 @@ class Employees(models.Model):
     
     @property
     def workper(self):
-        return int((datetime.now().date() - self.join_date).days / 30)
+        #return int((datetime.now().date() - self.join_date).days / 30)
+        today = datetime.now().date()
+
+        delta = relativedelta(today, self.join_date)
+        months = delta.years * 12 + delta.months
+        years = delta.years
+
+        result = f"{months} Bulan {years} Tahun"
+        return result

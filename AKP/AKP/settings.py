@@ -82,9 +82,9 @@ WSGI_APPLICATION = 'AKP.wsgi.application'
 DATABASES = {  
     'default': {  
         'ENGINE': 'django.db.backends.postgresql',  
-        'NAME': 'database_akp',  
+        'NAME': 'project_dj_akp',  
         'USER':'postgres',  
-        'PASSWORD':'admin',  
+        'PASSWORD':'adminakp123',  
         'HOST':'localhost',  
         'PORT':'5432'  
     }  
